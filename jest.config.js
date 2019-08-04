@@ -1,19 +1,14 @@
+const { defaults } = require('jest-config');
+
 module.exports = {
-  preset: 'ts-jest',
-  testEnvironment: 'node',
-  // roots: [
-  //   '<rootDir>/src',
-  // ],
-
-  // globals: {
-  //   'ts-jest': {
-  //     isolatedModules: true
-  //     diagnostics: false
-  //   }
-  // },
-
   transform: {
-    '^.+\\.ts$': 'ts-jest',
-    // '^.+\\.spec.js$': 'babel-jest'
+    '^.+\\.svelte$': '<rootDir>/test/jest-support/transform-svelte.js',
+    '^.+\\.js$': 'babel-jest'
   },
+
+  coveragePathIgnorePatterns: [
+    ...defaults.coveragePathIgnorePatterns,
+    '/test/jest-support/',
+    '/node_modules/svelte/internal/*'
+  ]
 };

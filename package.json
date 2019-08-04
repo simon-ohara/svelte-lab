@@ -4,18 +4,24 @@
   "description": "* Typescript * Svelte * Testing Library",
   "main": "index.js",
   "scripts": {
-    "test": "nodemon --watch ./src/ --watch ./test/ --ext ts --exec 'jest --clearCache && jest --no-cache --watch'"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
     "@testing-library/dom": "^5.6.0",
     "@testing-library/svelte": "^1.7.1",
-    "@types/jest": "^24.0.16",
+    "babel-jest": "^24.8.0",
+    "deasync": "^0.1.15",
     "jest": "^24.8.0",
-    "nodemon": "^1.19.1",
+    "rollup": "^1.18.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-svelte": "^5.1.0",
+    "sass": "^1.22.9",
     "svelte": "^3.6.9",
-    "ts-jest": "^24.0.2",
+    "svelte-preprocess": "^2.15.0",
     "typescript": "^3.5.3"
   }
 }
