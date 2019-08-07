@@ -1,6 +1,6 @@
 <script lang="ts">
   import Button from '@/button.svelte';
-  export let title: string;
+  export let title: string = 'Default Title';
 </script>
 
 <style lang="scss">
