@@ -4,7 +4,8 @@
   "description": "* Typescript * Svelte * Testing Library",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "test:watch": "nodemon --watch src --ext svelte --exec 'npx jest --watch'"
   },
   "author": "",
   "license": "ISC",
@@ -16,9 +17,7 @@
     "babel-jest": "^24.8.0",
     "deasync": "^0.1.15",
     "jest": "^24.8.0",
-    "rollup": "^1.18.0",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-svelte": "^5.1.0",
+    "nodemon": "^1.19.1",
     "sass": "^1.22.9",
     "svelte": "^3.6.9",
     "svelte-preprocess": "^2.15.0",

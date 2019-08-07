@@ -1,16 +1,17 @@
-import App from '../src/app.svelte';
+import App from '@/app.svelte';
 import { render, cleanup } from '@testing-library/svelte'
 
 beforeEach(cleanup);
 
 describe('App', () => {
-  it('has a public method dave', () => {
-    const { getByText } = render(App, { props: { name: 'world' } })
-    expect(getByText('Hello world!'))
+  it('can have its title set by props', () => {
+    const title = 'Hello World!';
+    const { getByText } = render(App, { props: { title }});
+    expect(getByText(title, { selector: 'h3' }));
   });
 
-  it('has a steve method sam', () => {
-    const { getByText } = render(App, { props: { name: 'steve' } })
-    expect(getByText('Hello steve!'))
+  it('has a save button', () => {
+    const { getByText } = render(App);
+    expect(getByText('Save Button', { selector: 'button' }));
   });
 });

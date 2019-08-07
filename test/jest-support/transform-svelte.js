@@ -1,28 +1,22 @@
-const
-  rollup = require('rollup'),
-  resolve = require('rollup-plugin-node-resolve'),
-  svelte = require('rollup-plugin-svelte'),
-  autoPreprocess = require('svelte-preprocess');
+const { basename } = require('path');
+const { compile, preprocess } = require('svelte/compiler');
+const ExtendedPreprocess = require('svelte-preprocess');
 
-exports.process = (...args) => {
-  const
-    compiled = {},
-    [, input] = args;
+exports.process = (source, filename) => {
+  const options = {
+    accessors: true,
+    css: false,
+    filename: basename(filename),
+    format: 'cjs',
+  };
 
-  rollup
-    .rollup({ input, plugins: [svelte({ preprocess: autoPreprocess() }), resolve()] })
-    .then(bundle => bundle.generate({ format: 'cjs', sourcemap: true }))
-    .then(({ output }) => {
-      output.reduce((carry, record) => Object.assign(carry, record), compiled);
-    })
-    .catch((error) => {
-      throw error;
-    });
+  const compiled = {};
 
-  // OSX sometimes throws an `Abort trap: 6` during the deasync loop
-  // Used here as "jest transform processes" must by synchronous
-  // https://github.com/facebook/jest/issues/2711
+  preprocess(source, ExtendedPreprocess(), options)
+    .then(({ code }) => compile(code, options))
+    .then(({ js }) => Object.assign(compiled, js))
+    .catch(err => { throw err });
+
   require('deasync').loopWhile(() => !compiled.code && !compiled.map);
-
   return compiled;
 };

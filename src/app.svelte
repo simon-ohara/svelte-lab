@@ -1,5 +1,6 @@
 <script lang="ts">
-  export let name: string;
+  import Button from '@/button.svelte';
+  export let title: string;
 </script>
 
 <style lang="scss">
@@ -10,4 +11,5 @@
   }
 </style>
 
-<h1>Hello {name}!</h1>
+<h3>{title}</h3>
+<Button label="Save Button"/>
