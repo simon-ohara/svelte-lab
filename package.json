@@ -28,7 +28,7 @@
     "sass": "^1.22.9",
     "svelte": "^3.6.9",
     "svelte-loader": "^2.13.6",
-    "svelte-preprocess": "^2.15.0",
+    "svelte-preprocess": "^2.15.1",
     "ts-jest": "^24.0.2",
     "ts-loader": "^6.0.4",
     "typescript": "^3.5.3",
