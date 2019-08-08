@@ -18,7 +18,7 @@ exports.process = (source, filename) => {
 
     extended: {
       typescript: {
-        tsconfigPath: resolve(__dirname, '../../', 'config/tsconfig.json')
+        tsconfigFile: resolve(__dirname, '../../', 'config/tsconfig.json')
       }
     }
   };

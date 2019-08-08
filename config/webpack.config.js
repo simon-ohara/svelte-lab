@@ -1,6 +1,6 @@
 const path = require('path');
 
-const tsconfigPath = path.resolve(__dirname, 'tsconfig.json');
+const tsconfigFile = path.resolve(__dirname, 'tsconfig.json');
 
 module.exports = {
   name: 'svelte-lab-bundle',
@@ -32,7 +32,7 @@ module.exports = {
           loader: 'svelte-loader',
           options: {
             preprocess: require('svelte-preprocess')({
-              typescript: { tsconfigPath }
+              typescript: { tsconfigFile }
             })
           }
         }
@@ -43,7 +43,7 @@ module.exports = {
         use: {
           loader: 'ts-loader',
           options: {
-            configFile: tsconfigPath,
+            configFile: tsconfigFile,
           }
         }
       },
