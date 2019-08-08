@@ -4,17 +4,18 @@ This is an attempt to explore and/or create suitable tooling to achieve a develo
 
 It aims to use the following technologies:
 
-* Typescript
-* Svelte
-* Sass
-* Jest
+* [Typescript](https://www.typescriptlang.org/)
+* [Svelte](https://svelte.dev/)
+* [Sass](https://sass-lang.com/)
+* [Jest](https://jestjs.io/en/)
+* [Webpack](https://webpack.js.org/)
 
 ## Quickstart
 
 To run the lab and see the compiled output:
 
 ```bash
-git clone svelte-lab
+git clone git@github.com:simon-ohara/svelte-lab.git
 cd svelte-lab
 npm i && npm start
 ```
