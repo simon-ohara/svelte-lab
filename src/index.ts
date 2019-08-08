@@ -6,9 +6,8 @@ document.body.append(target);
 
 const title = 'Test Application';
 
-new App({
+const app = new App({
   target,
   props: { title }
 });
-
 

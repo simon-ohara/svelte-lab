@@ -6,7 +6,7 @@
 <style lang="scss">
   $color: purple;
 
-  h1 {
+  h3 {
     color: $color;
   }
 </style>

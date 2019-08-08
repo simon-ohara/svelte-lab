@@ -4,24 +4,38 @@
   "description": "* Typescript * Svelte * Testing Library",
   "main": "index.js",
   "scripts": {
+    "build": "npm run test:coverage && npm run build:app && npm run build:page",
+    "build:app": "webpack",
+    "build:page": "cp ./index.html public/.",
     "test": "jest",
     "test:watch": "nodemon --watch src --ext svelte,js --exec 'npx jest --watch'",
-    "test:coverage": "jest --coverage"
+    "test:coverage": "jest --coverage",
+    "start": "npm run build && http-server"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@babel/preset-env": "^7.5.5",
+    "@pyoner/svelte-types": "^3.4.4-2",
     "@testing-library/dom": "^5.6.0",
     "@testing-library/svelte": "^1.7.1",
     "babel-jest": "^24.8.0",
+    "babel-loader": "^8.0.6",
     "deasync": "^0.1.15",
     "jest": "^24.8.0",
     "nodemon": "^1.19.1",
     "sass": "^1.22.9",
     "svelte": "^3.6.9",
+    "svelte-loader": "^2.13.6",
     "svelte-preprocess": "^2.15.0",
-    "typescript": "^3.5.3"
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6"
+  },
+  "dependencies": {
+    "http-server": "^0.11.1"
   }
 }
